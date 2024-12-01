@@ -5,15 +5,9 @@ const hashUtils = (text, algorithm = "sha256", encoding = 'hex') => {
 
     hash.update(text);
 
-    return hash.digest();
-}
-
-const verifyHash = (text, hash, algorithm = 'sha256', encoding = 'hex') => {
-    const generatedHash = hashUtils(text, algorithm, encoding);
-    return generatedHash === hash;
+    return hash.digest(encoding);
 }
 
 module.exports = {
-    createHash: hashUtils,
-    verifyHash
+    createHash: hashUtils
 };
