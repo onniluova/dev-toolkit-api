@@ -9,6 +9,7 @@ class HashService {
 
     static async generateHash(text, options= {}) {
         try {
+            // default options
             const {
                 algorithm = 'sha256',
                 encoding = 'hex',
